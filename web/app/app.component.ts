@@ -1,10 +1,13 @@
-import {Component} from "@angular/core";
-
 /**
+ * 根组件
  * Created by demon on 2016/9/23.
  */
+import {Component} from "@angular/core";
+
 @Component({
-  selector: 'my-app',
-  template: `<h1>Angular App</h1><test></test>`,
+  selector: 'ng-app',
+  templateUrl: 'app.template.html',
+  styleUrls: ['app.style.css']
 })
-export default class AppComponent {}
+export default class AppComponent {
+}

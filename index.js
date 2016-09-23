@@ -44,8 +44,7 @@ app.use(express.static(path.join(__dirname, 'web')));
 app.use(ezajax(path.join(__dirname, 'api'), {root: 'api'}));
 
 app.use((req, res)=> {
-  res.statusCode = 404;
-  res.send('Not Found!!!');
+  res.sendfile(path.join(__dirname, 'web/index.html'));
 });
 
 var server = http.createServer(app);
