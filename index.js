@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'web')));
 app.use(ezajax(path.join(__dirname, 'api'), {root: 'api'}));
 
 app.use((req, res)=> {
-  res.sendfile(path.join(__dirname, 'web/index.html'));
+  res.sendFile(path.join(__dirname, 'web/index.html'));
 });
 
 var server = http.createServer(app);
