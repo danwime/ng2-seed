@@ -2,7 +2,7 @@
  * Client Main Script
  * Created by demon on 2016/9/23.
  */
-import './styles/main.css'
+import './libs/css/main.css'
 
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import AppModule from "./app/app.module";

@@ -5,6 +5,8 @@
 var gulp = require('gulp');
 var clean = require('gulp-eztasks').clean;
 var babel = require('gulp-eztasks').babel;
+var minijs = require('gulp-eztasks').minijs;
+var minicss = require('gulp-eztasks').minicss;
 var sync = require('gulp-eztasks').sync;
 var webpack = require('webpack-stream');
 var runSequnce = require('run-sequence');
@@ -42,7 +44,7 @@ config.devStatic = [
   'tsconfig.json',
   '.babelrc',
   'web/**/*',
-  '!web/app/*.ts',
+  '!web/app/**/*.ts',
   '!web/main.ts',
   '!web/vendor.ts',
   '!**/*_tmp___'
@@ -66,6 +68,10 @@ gulp.task('compile:client', function () {
 gulp.task('sync', sync(config.static, config.dist));
 gulp.task('sync:dev', sync(config.devStatic, config.dist, true));
 
+//文件压缩优化
+gulp.task('optimize:css', minicss(config.dist + '/web/libs/**/*.css'));
+gulp.task('optimize:js', minijs(config.dist + '/web/libs/**/*.js'));
+
 //开发构建
 gulp.task('build:dev', function (done) {
   runSequnce('clean', ['compile:server:dev'], 'sync:dev', done);
@@ -73,7 +79,7 @@ gulp.task('build:dev', function (done) {
 
 //产品构建
 gulp.task('build', function (done) {
-  runSequnce('clean', ['compile:server', 'compile:client'], 'sync', done);
+  runSequnce('clean', ['compile:server', 'compile:client'], 'sync', ['optimize:css', 'optimize:js'], done);
 });
 
 //默认构建任务
