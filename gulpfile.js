@@ -26,13 +26,23 @@ config.src = [
   '!dist/**',
 ];
 
-//静态资源文件
+//生产模式下的静态资源文件
 config.static = [
   'package.json',
-  'webpack.*.js',
-  'web/**',
-  '!web/app/**',
-  '!web/custom-typings.d.ts',
+  'web/**/*',
+  '!web/**/*.ts',
+];
+
+//开发模式下的静态资源文件
+config.devStatic = [
+  'package.json',
+  'webpack.dev.js',
+  'tsconfig.json',
+  '.babelrc',
+  'web/**/*',
+  '!web/app/*.ts',
+  '!web/main.ts',
+  '!web/vendor.ts',
 ];
 
 //清理任务
@@ -51,7 +61,7 @@ gulp.task('compile:client', function () {
 
 //静态资源同步任务
 gulp.task('sync', sync(config.static, config.dist));
-gulp.task('sync:dev', sync(config.static, config.dist, true));
+gulp.task('sync:dev', sync(config.devStatic, config.dist, true));
 
 //开发构建
 gulp.task('build:dev', function (done) {
