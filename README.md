@@ -1,4 +1,5 @@
-##Angular2 种子项目
+Angular2 种子项目
+---
 项目主要用来做其他项目的初始项目,免得以后再建立各种配置文件了...  
 
 
@@ -8,15 +9,16 @@
 - 构建分为 "开发" 和 "生产" 两个环境
 - 支持 *await/async*,感动到哭(手动哭脸)
 
-###Demo启动
+Demo启动
+---
 ```bash
 git clone https://git.danwi.me/danwi/ng2-seed.git
 npm install
 npm start
 ```
 
-###环境说明
-
+环境说明
+---
 #### 1. 开发环境
 通过如下命令进入该模式
 ```bash
