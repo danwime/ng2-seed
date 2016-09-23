@@ -28,6 +28,7 @@ config.src = [
 
 //静态资源文件
 config.static = [
+  'package.json',
   'webpack.*.js',
   'web/**',
   '!web/app/**',
