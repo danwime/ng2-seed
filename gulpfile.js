@@ -24,6 +24,7 @@ config.src = [
   '!node_modules/**',
   '!web/**',
   '!dist/**',
+  '!**/*_tmp___'
 ];
 
 //生产模式下的静态资源文件
@@ -31,6 +32,7 @@ config.static = [
   'package.json',
   'web/**/*',
   '!web/**/*.ts',
+  '!**/*_tmp___'
 ];
 
 //开发模式下的静态资源文件
@@ -43,6 +45,7 @@ config.devStatic = [
   '!web/app/*.ts',
   '!web/main.ts',
   '!web/vendor.ts',
+  '!**/*_tmp___'
 ];
 
 //清理任务
