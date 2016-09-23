@@ -6,6 +6,7 @@
 - 使用gulp做构建系统
 - 包含服务器代码(express+ezajax)
 - 构建分为 "开发" 和 "生产" 两个环境
+- 支持 *await/async*,感动到哭(手动哭脸)
 
 ###Demo启动
 ```bash
