@@ -50,7 +50,7 @@ gulp
 cd dist
 
 #以生产模式启动node脚本
-NODE_ENV=development node ./index.js
+NODE_ENV=production node ./index.js
 ```
 
 该环境将启用如下特性:  
