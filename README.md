@@ -8,6 +8,8 @@ Angular2 种子项目
 - 包含服务器代码(express+ezajax)
 - 构建分为 "开发" 和 "生产" 两个环境
 - 支持 *await/async*,感动到哭(手动哭脸)
+- 自动压缩js/css文件
+- 热替换/热更新
 
 Demo启动
 ---
