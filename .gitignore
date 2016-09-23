@@ -1,0 +1,10 @@
+# jetbrains ides
+.idea
+*.iml
+
+# build
+dist
+
+# node
+node_modules
+npm-debug.log
