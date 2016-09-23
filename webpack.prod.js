@@ -32,7 +32,13 @@ module.exports = {
       {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'},
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style!css',
+        exclude: [/app/]
+      },
+      {
+        test: /\.(html|css)$/,
+        loader: 'raw-loader',
+        include: [/app/]
       }
     ]
   },
