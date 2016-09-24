@@ -4,19 +4,34 @@
  */
 import {NgModule, ApplicationRef} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
-import AppComponent from "./app.component";
+import {RouterModule} from "@angular/router";
 import {removeNgStyles, createNewHosts} from '@angularclass/hmr';
-import routing from "./app.routing";
+
+import AppComponent from "./app.component";
 import HomeComponent from "./home/home.component";
 import AboutComponent from "./about/about.component";
 import ParentComponent from "./parent/parent.component";
 import Child1Component from "./parent/child1.component";
 import Child2Component from "./parent/child2.component";
 
+
 @NgModule({
   imports: [
     BrowserModule,
-    routing
+    RouterModule.forRoot([
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      {path: 'home', component: HomeComponent},
+      {path: 'about', component: AboutComponent},
+      {
+        path: 'parent', component: ParentComponent,
+        children: [
+          {path: '', redirectTo: '/parent/child1', pathMatch: 'full'},
+          {path: 'child1', component: Child1Component},
+          {path: 'child2', component: Child2Component},
+        ]
+      },
+      {path: 'async', loadChildren: 'es6-promise?,[name]!./async/async.module#AsyncModule'}
+    ])
   ],
   declarations: [
     AppComponent,

@@ -3,12 +3,18 @@
  * Created by demon on 2016/9/24.
  */
 import {NgModule} from "@angular/core";
-import asyncRouting from "./async.routing";
+import {RouterModule} from "@angular/router";
+
 import AsyncComponent from "./async.component";
 
 @NgModule({
   imports: [
-    asyncRouting
+    RouterModule.forChild([
+      {
+        path: '',
+        component: AsyncComponent
+      }
+    ])
   ],
   declarations: [
     AsyncComponent
