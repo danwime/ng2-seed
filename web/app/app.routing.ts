@@ -21,7 +21,8 @@ const appRoutes: Routes = [
       {path: 'child1', component: Child1Component},
       {path: 'child2', component: Child2Component},
     ]
-  }
+  },
+  {path:'async', loadChildren: 'es6-promise?,[name]!./async/async.module#AsyncModule'}
 ];
 
 const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

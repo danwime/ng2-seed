@@ -12,7 +12,8 @@ module.exports = {
 
   output: {
     publicPath: '/bundles/',
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js'
   },
 
   resolve: {
@@ -23,7 +24,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loaders: ['babel', 'awesome-typescript-loader', 'angular2-template-loader'],
+        loaders: ['babel', 'awesome-typescript-loader', 'angular2-template-loader','angular2-load-children-loader'],
         exclude: [/node_modules\/(?!(ng2-.+))/]
       },
       {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},

@@ -14,7 +14,8 @@ module.exports = {
   output: {
     path: '/',
     publicPath: '/bundles/',
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js'
   },
 
   resolve: {
@@ -29,6 +30,7 @@ module.exports = {
           'babel',
           'awesome-typescript-loader',
           'angular2-template-loader',
+          'angular2-load-children-loader',
           '@angularclass/hmr-loader',   //启用热加载
         ],
         exclude: [/node_modules\/(?!(ng2-.+))/]
