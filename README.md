@@ -36,11 +36,11 @@ cd dist
 NODE_ENV=development node ./index.js
 ```
 该环境将启用如下特性:  
-1. 监听并编译服务器代码(持续监听文件改变)
-2. webpack由后端服务器(express)的中间件来打包,不是gulp来打包
-3. 前端代码支持 *热替换*
-4. 自动生成sourcemap便于调试
-5. 后端的ezajax模块支持 *热替换*
+* 监听并编译服务器代码(持续监听文件改变)
+* webpack由后端服务器(express)的中间件来打包,不是gulp来打包
+* 前端代码支持 *热替换*
+* 自动生成sourcemap便于调试
+* 后端的ezajax模块支持 *热替换*
 
 #### 2. 生产环境
 通过如下命令进入该模式
@@ -58,7 +58,7 @@ NODE_ENV=production node ./index.js
 ```
 
 该环境将启用如下特性:  
-1. 客户端webpack由gulp来启动
-2. 前端资源自动压缩
-3. 所有的热替换被关闭
-4. 开启angular2的产品模式(enbaleProdMode)
+* 客户端webpack由gulp来启动
+* 前端资源自动压缩
+* 所有的热替换被关闭
+* 开启angular2的产品模式(enbaleProdMode)
