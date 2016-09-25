@@ -20,6 +20,6 @@ import AsyncComponent from "./async.component";
     AsyncComponent
   ]
 })
-export class AsyncModule {
+export default class AsyncModule {
 
 }
