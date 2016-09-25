@@ -58,6 +58,7 @@ module.exports = {
       'process.env': {
         'NODE_ENV': '"development"'
       }
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin('common.js', ['vendor', 'main'])
   ]
 };

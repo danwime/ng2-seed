@@ -5,6 +5,8 @@
 var webpack = require('webpack');
 
 module.exports = {
+  debug: false,
+  devtool: 'source-map',
   entry: {
     vendor: './web/vendor.ts',
     main: './web/main.ts'
@@ -24,7 +26,7 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loaders: ['babel', 'awesome-typescript-loader', 'angular2-template-loader','angular2-load-children-loader'],
+        loaders: ['babel', 'awesome-typescript-loader', 'angular2-template-loader', 'angular2-load-children-loader'],
         exclude: [/node_modules\/(?!(ng2-.+))/]
       },
       {test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'},
@@ -47,13 +49,16 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compressor: {warnings: false},
-      output: {comments: false}
+      beautify: false,
+      mangle: {screw_ie8: true, keep_fnames: true},
+      compress: {screw_ie8: true, warnings: false},
+      comments: false
     }),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': '"production"'
       }
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin('common.js', ['vendor', 'main'])
   ]
 };
