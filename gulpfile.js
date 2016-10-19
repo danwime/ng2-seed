@@ -58,7 +58,7 @@ gulp.task('clean', clean(config.dist));
 
 //服务端编译任务
 gulp.task('compile:server', babel(config.src, config.dist, {presets: ['danwi']}));
-gulp.task('compile:server:dev', babel(config.src, config.dist, true, {presets: ['danwi']}));
+gulp.task('compile:server:dev', babel(config.src, config.dist, true, {presets: ['danwi'], sourceMaps: 'inline'}));
 
 //客户端webpack打包任务
 gulp.task('compile:client', function () {
