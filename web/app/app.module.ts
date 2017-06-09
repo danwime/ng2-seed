@@ -5,7 +5,6 @@
 import {NgModule, ApplicationRef} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
-import {removeNgStyles, createNewHosts} from '@angularclass/hmr';
 
 import AppComponent from "./app.component";
 import HomeComponent from "./home/home.component";
@@ -44,21 +43,4 @@ import Child2Component from "./parent/child2.component";
   bootstrap: [AppComponent]
 })
 export default class AppModule {
-  constructor(public appRef: ApplicationRef) {
-  }
-
-  hmrOnInit(store) {
-    console.log('HMR store', store);
-  }
-
-  hmrOnDestroy(store) {
-    let cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
-    store.disposeOldHosts = createNewHosts(cmpLocation);
-    removeNgStyles();
-  }
-
-  hmrAfterDestroy(store) {
-    store.disposeOldHosts();
-    delete store.disposeOldHosts;
-  }
 }
