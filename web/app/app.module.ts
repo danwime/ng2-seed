@@ -29,7 +29,7 @@ import Child2Component from "./parent/child2.component";
           {path: 'child2', component: Child2Component},
         ]
       },
-      {path: 'async', loadChildren: 'es6-promise?,[name]!./async/async.module'}
+      {path: 'async', loadChildren: 'es6-promise-loader?,[name]!./async/async.module'}
     ])
   ],
   declarations: [
