@@ -4,7 +4,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-  template: '<h2>Async</h2>'
+  template: '<h2>Async - 异步加载</h2>'
 })
 export default class AsyncComponent {
 

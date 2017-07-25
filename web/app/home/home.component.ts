@@ -9,4 +9,9 @@ import {Component} from "@angular/core";
   styleUrls: ['home.style.css']
 })
 export default class HomeComponent {
+  data = '正在从ezajax中获取数据...';
+
+  async ngOnInit() {
+    this.data = (await TestAjax.getData()).data;
+  }
 }
